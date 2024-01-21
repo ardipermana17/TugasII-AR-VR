@@ -1,0 +1,11 @@
+Model Information:
+* title:	Gold Crystal
+* source:	https://sketchfab.com/3d-models/gold-crystal-742a30b7eaf141088f498150ce25580b
+* author:	sneacker202 (https://sketchfab.com/sneacker202)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Gold Crystal" (https://sketchfab.com/3d-models/gold-crystal-742a30b7eaf141088f498150ce25580b) by sneacker202 (https://sketchfab.com/sneacker202) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

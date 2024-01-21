@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script
+        src="https://unpkg.com/aframe-environment-component@1.3.3/dist/aframe-environment-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@^4.0.0/dist/aframe-event-set-component.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.2.0/dist/aframe-extras.min.js"></script>
+    <script>
+        AFRAME.registerComponent('navigate-on-click', {
+            schema: {
+                url: {
+                    default: ''
+                }
+            },
+
+            init: function () {
+                var data = this.data;
+                var el = this.el;
+
+                el.addEventListener('click', function () {
+                    window.location.href = data.url;
+                });
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <a-scene background="color: #FAFAFA" environment="preset: forest">
+        <a-assets>
+            <img id="japan" src="assets/japan.jpg">
+            <img id="egypt" src="assets/egypt.jpg">
+            <img id="goldmine" src="assets/goldmine.jpg">
+            <img id="volcano" src="assets/volcano.jpg">
+            <img id="forest" src="assets/forest.jpg">
+            <img src="assets/kayu.jpg" alt="" id="base">
+            <img src="assets/normal-kayu.jpg" alt="" id="normal">
+
+            <a-asset-item id="duck"
+                src="https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/main/2.0/Duck/glTF/Duck.gltf">
+            </a-asset-item>
+            <a-asset-item id="fox"
+                src="https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/main/2.0/Fox/glTF/Fox.gltf">
+            </a-asset-item>
+            <a-asset-item id="wolf" src="assets/wolf/scene.gltf">
+            </a-asset-item>
+            <a-asset-item id="senjata" src="assets/senjata/scene.gltf">
+            </a-asset-item>
+            <a-asset-item id="gajah" src="assets/elephant/scene.gltf">
+            </a-asset-item>
+            <a-asset-item id="elang" src="assets/eagle/scene.gltf">
+            </a-asset-item>
+            <a-asset-item id="harimau" src="assets/tiger/scene.gltf">
+            </a-asset-item>
+            <a-asset-item id="botol"
+                src="https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/main/2.0/WaterBottle/glTF/WaterBottle.gltf">
+            </a-asset-item>
+            <a-asset-item id="kursi"
+                src="https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/main/2.0/SheenChair/glTF/SheenChair.gltf">
+            </a-asset-item>
+        </a-assets>
+        <a-sound src="src: url(assets/sound/forest.mp3)" autoplay="true"></a-sound>
+        <a-entity look-controls cursor="rayOrigin: mouse"></a-entity>
+        <!-- Basic circle. -->
+        <a-entity text="value:Japan; color:#0C0A0A;  wrapCount:5" position="-5 3.3 -10"></a-entity>
+        <a-entity text="value:Egypt; color:#0C0A0A;  wrapCount:5" position="-2 3.3 -10"></a-entity>
+        <a-entity text="value:Goldmine; color:#0C0A0A;  wrapCount:8" position="1 3.3 -10"></a-entity>
+        <a-entity text="value:Volcano; color:#0C0A0A;  wrapCount:7" position="4 3.3 -10"></a-entity>
+        <a-entity text="value:Forest; color:#0C0A0A;  wrapCount:5" position="7 3.3 -10"></a-entity>
+        <a-circle src="#japan" radius="1" position="-5 2 -10" event-set__enter="_event: mouseenter; event-set__leave="
+            _event: mouseleave; color: #4CC3D9 navigate-on-click="url: japan.html"></a-circle>
+        <a-circle src="#egypt" radius="1" position="-2 2 -10" event-set__enter="_event: mouseenter; event-set__leave="
+            _event: mouseleave; color: #4CC3D9 navigate-on-click="url: mesir.html"></a-circle>
+        <a-circle src="#goldmine" radius="1" position="1 2 -10" event-set__enter="_event: mouseenter; event-set__leave="
+            _event: mouseleave; color: #4CC3D9 navigate-on-click="url: tambangemas.html"></a-circle>
+        <a-circle src="#volcano" radius="1" position="4 2 -10" event-set__enter="_event: mouseenter; event-set__leave="
+            _event: mouseleave; color: #4CC3D9 navigate-on-click="url: gunungmerapi.html"></a-circle>
+        <a-circle src="#forest" radius="1" position="7 2 -10" event-set__enter="_event: mouseenter; event-set__leave="
+            _event: mouseleave; color: #4CC3D9 navigate-on-click="url: index.html"></a-circle>
+
+        <a-entity gltf-model="#duck" rotation="0 0 0" position="-9.5 0.2 -3" scale="0.1 0.1 0.1"
+            animation="property: rotation; to: 0 360 30; loop: false; dur: 10000"></a-entity>
+        <a-entity gltf-model="#duck" rotation="0 0 0" position="-9 0.2 -3.5" scale="0.2 0.2 0.2"
+            animation="property: rotation; to: 0 360 30; loop: false; dur: 10000"></a-entity>
+        <a-entity gltf-model="#duck" rotation="0 0 0" position="-8.5 0.2 -3" scale="0.1 0.1 0.1"
+            animation="property: rotation; to: 0 360 30; loop: false; dur: 10000"></a-entity>
+        <a-entity gltf-model="#fox" position="15.5 0.2 -20.2" rotation="0 90 0" scale="0.010 0.010 0.010"></a-entity>
+        <a-entity gltf-model="#wolf" position="18 0.2 -14" rotation="0 0 0" scale="1 1 1" animation-mixer></a-entity>
+        <a-entity gltf-model="#senjata" position="-9.4 0.7 -5" rotation="0 0 90" scale="0.001 0.001 0.001"></a-entity>
+        <a-entity gltf-model="#gajah" position="9 0.2 -25" rotation="0 0 0" scale="2 2 2" animation-mixer></a-entity>
+        <a-entity gltf-model="#elang" position="7 8 -25" rotation="0 0 0" scale="0.09 0.09 0.09"
+            animation-mixer></a-entity>
+        <a-entity gltf-model="#harimau" position="-20 0.2 -11" rotation="0 45 0" scale="0.01 0.01 0.01"
+            animation-mixer></a-entity>
+        <a-entity gltf-model="#botol" position="17 0.2 -20.2" scale="0.8 0.8 0.8"></a-entity>
+        <a-entity gltf-model="#botol" position="-9 0.8 -5" scale="0.5 0.5 0.5"></a-entity>
+        <a-entity gltf-model="#botol" position="-9 0.8 -4.9" scale="0.5 0.5 0.5"></a-entity>
+        <a-entity gltf-model="#kursi" position="-10 0.2 -5" rotation="0 90 0" scale="1 1 1"></a-entity>
+        <a-entity gltf-model="#kursi" position="-8 0.2 -5" rotation="0 -90 0" scale="1 1 1" shadow
+            event-set__enter="_event: mouseenter" event-set__leave="_event: mouseleave"><a-animation
+                attribute="position" dur="1000" fill="forwards" to="-6 0.2 -5" direction="alternate"
+                begin="click"></a-animation></a-entity>
+
+        <a-box id="kotak" src="#base" repeat="1 1" normal-map="#normal" segment-height=100 segment-width=100
+            segment-depth=100 normal-texture-repeat="1 1" position="-9 0.2 -5" scale="1 1 1"></a-box>
+        <a-sphere position="-8.6 0.2 -4.35" radius="0.1" color="#EF2D5E" shadow
+            event-set__enter="_event: mouseenter; color: #026fc9" event-set__leave="_event: mouseleave; color: #EF2D5E">
+
+            <!-- This animation begins when the sphere is clicked with the mouse. -->
+            <a-animation attribute="position" dur="1000" fill="forwards" to="-7.5 5 -1" direction="alternate"
+                begin="click"></a-animation>
+        </a-sphere>
+    </a-scene>
+</body>
+
+</html>

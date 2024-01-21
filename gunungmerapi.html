@@ -1,0 +1,72 @@
+<html>
+
+<head>
+  <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+  <script src="https://unpkg.com/aframe-environment-component@1.3.3/dist/aframe-environment-component.min.js"></script>
+  <script src="https://unpkg.com/aframe-event-set-component@^4.0.0/dist/aframe-event-set-component.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.2.0/dist/aframe-extras.min.js"></script>
+  <script>
+    AFRAME.registerComponent('navigate-on-click', {
+      schema: {
+        url: { default: '' }
+      },
+
+      init: function () {
+        var data = this.data;
+        var el = this.el;
+
+        el.addEventListener('click', function () {
+          window.location.href = data.url;
+        });
+      }
+    });        
+  </script>
+</head>
+
+<body>
+  <a-scene background="color: #FAFAFA" environment="preset: volcano">
+    <a-assets>
+      <img id="japan" src="assets/japan.jpg">
+      <img id="egypt" src="assets/egypt.jpg">
+      <img id="goldmine" src="assets/goldmine.jpg">
+      <img id="volcano" src="assets/volcano.jpg">
+      <img id="forest" src="assets/forest.jpg">
+
+      <a-asset-item id="wolf" src="assets/wolf/scene.gltf">
+      </a-asset-item>
+      <a-asset-item id="pig" src="assets/pig/scene.gltf">
+      </a-asset-item>
+      <a-asset-item id="monkey" src="assets/monkey/scene.gltf">
+      </a-asset-item>
+      <a-asset-item id="deer" src="assets/deer/scene.gltf">
+      </a-asset-item>
+    </a-assets>
+    <a-sound src="src: url(assets/sound/volcano.mp3)" autoplay="true"></a-sound>
+    <a-entity look-controls cursor="rayOrigin: mouse"></a-entity>
+    <!-- Basic circle. -->
+    <a-entity text="value:Japan; color:#FDEBEB;  wrapCount:5" position="-5 3.8 -20"></a-entity>
+    <a-entity text="value:Egypt; color:#FDEBEB;  wrapCount:5" position="-2 3.8 -20"></a-entity>
+    <a-entity text="value:Goldmine; color:#FDEBEB;  wrapCount:8" position="1 3.8 -20"></a-entity>
+    <a-entity text="value:Volcano; color:#FDEBEB;  wrapCount:7" position="4 3.8 -20"></a-entity>
+    <a-entity text="value:Forest; color:#FDEBEB;  wrapCount:5" position="7 3.8 -20"></a-entity>
+    <a-circle src="#japan" radius="1" position="-5 2.5 -20" event-set__enter="_event: mouseenter; event-set__leave="
+      _event: mouseleave; color: #4CC3D9" navigate-on-click="url: japan.html"></a-circle>
+    <a-circle src="#egypt" radius="1" position="-2 2.5 -20" event-set__enter="_event: mouseenter; event-set__leave="
+      _event: mouseleave; color: #4CC3D9" navigate-on-click="url: mesir.html"></a-circle>
+    <a-circle src="#goldmine" radius="1" position="1 2.5 -20" event-set__enter="_event: mouseenter; event-set__leave="
+      _event: mouseleave; color: #4CC3D9" navigate-on-click="url: tambangemas.html"></a-circle>
+    <a-circle src="#volcano" radius="1" position="4 2.5 -20" event-set__enter="_event: mouseenter; event-set__leave="
+      _event: mouseleave; color: #4CC3D9" navigate-on-click="url: gunungmerapi.html"></a-circle>
+    <a-circle src="#forest" radius="1" position="7 2.5 -20" event-set__enter="_event: mouseenter; event-set__leave="
+      _event: mouseleave; color: #4CC3D9" navigate-on-click="url: index.html"></a-circle>
+
+    <a-entity gltf-model="#wolf" position="-1 0.2 -6" rotation="0 0 0" scale="1 1 1" animation-mixer></a-entity>
+    <a-entity gltf-model="#pig" position="-14 0.4 -3" rotation="0 0 0" scale="0.07 0.07 0.07"
+      animation-mixer></a-entity>
+    <a-entity gltf-model="#monkey" position="14 0.2 -3" rotation="0 -45 0" scale="0.3 0.3 0.3"></a-entity>
+    <a-entity gltf-model="#deer" position="3 1 -4" rotation="0 0 0" scale="4 4 4"></a-entity>
+
+  </a-scene>
+</body>
+
+</html>

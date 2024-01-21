@@ -1,0 +1,11 @@
+Model Information:
+* title:	Ferret Fbx
+* source:	https://sketchfab.com/3d-models/ferret-fbx-7897b4c642f7429e873b08c790717c19
+* author:	House Doctor (https://sketchfab.com/chin4grci4)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Ferret Fbx" (https://sketchfab.com/3d-models/ferret-fbx-7897b4c642f7429e873b08c790717c19) by House Doctor (https://sketchfab.com/chin4grci4) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
